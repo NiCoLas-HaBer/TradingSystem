@@ -72,14 +72,12 @@ namespace TradingSystem
 
                 // Calculate the price of the European call option
                 double callOptionPrice = Spot_Price * N_d1 - Strike_price * Math.Exp(-RiskFreeRate * Time_To_Expiration) * N_d2;
-                //Console.WriteLine("The price of this option is: {0}", callOptionPrice);
                 return callOptionPrice;
             }
             if(kind == BullOrBear.Put)
             {
-                // Cumulative distribution function of the standard normal distribution
                 double N_d1 = Normal.CDF(0, 1, (-d1));
-                double N_d2 = Normal.CDF(0, 1, (-d2)); // Note the change in sign for d2
+                double N_d2 = Normal.CDF(0, 1, (-d2));
 
 
                 // Calculate the price of the European put option
@@ -154,11 +152,10 @@ namespace TradingSystem
             string input = Console.ReadLine();
             double qtq = Convert.ToDouble(input);
             
-            //double qtq = Convert.ToDouble(Console.ReadLine("How many option contracts do you want to hedge?"));
             Order order = new Order(Stck);
            
             order.Symbol = Stck.TickerSymbol;
-            order.Quantity = Math.Abs(delta)*qtq;//////////////////////////////////////////////////////////////////////
+            order.Quantity = Math.Abs(delta)*qtq;
             order.Status = OrderStatus.Hedging;
             order.pprice = Stck.Pricer();
 

@@ -44,7 +44,7 @@ namespace TradingSystem
         // Sample method for user authentication
         public static bool AuthenticateUser()
         {
-            Console.WriteLine("In order to have access to the desk you have to Login\nSuperUser(UserName:Nicolas;Password:HABER");
+            Console.WriteLine("In order to have access to the desk you have to Login\nSuperUser(UserName:Nicolas;Password:HABER)");
             Console.Write("UserName:");
             string username = Console.ReadLine();
             Console.Write("Password:");

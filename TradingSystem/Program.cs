@@ -7,45 +7,6 @@ using System;
 using System.Net;
 using System.Net.Mail;
 
-// Define an Order class to represent individual orders
-public class Order
-{
-    public int OrderId { get; set; }
-    public string Symbol { get; set; }
-    public double Quantity { get; set; }
-    protected double Price { get; set; } //The price is of type protected since it can't be changed by the outside. On the other hand, it should be used by the OrderManager class
-    public OrderType Type { get; set; }
-    public OrderStatus Status { get; set; }
-    public DateTime CreatedAt { get; set; }
-    public string comment {  get; set; }
-
-
-    public Order(FinancialInstrument asset) //In order to price automatically and integrate this in the order, we should give the order constructor an Options object as an input. However, Options inherits the FiancialInstrument class
-    {
-        this.Price = asset.Pricer();
-        this.comment = asset.comment;
-        Symbol = asset.TickerSymbol;
-
-    }
-    public double GetPrice() //This is a get function to retreive the price of the product when the price is called from outisde the class, since the access modifier is of type "protected"
-    {
-        return this.Price;
-    }
-    internal double pprice
-    {
-        set
-            
-        {
-            if(this.Status == OrderStatus.Hedging)
-            {
-                this.Price = value;
-            }
-            
-        }
-    }
-
-    // Additional properties and methods can be added based on requirements
-}
 
 // Enum to represent the type of order (Buy or Sell)
     public enum OrderType
@@ -63,99 +24,7 @@ public class Order
         Cancelled,
         Hedging
     }
-    public class OrderManager
-    {
-        private static List<Order> orders = new List<Order>();
-        private static bool IsLogin = false;
 
-        public static event EventHandler<string[]> EmailSender;
-
-
-
-    public static void LogOut()
-        {
-            IsLogin = false;
-        }
-        public static void PlaceOrder(Order order)
-        {
-        
-            if (order.Symbol != null && IsLogin)
-            {
-                order.OrderId = GenerateOrderId();
-                order.CreatedAt = DateTime.Now;
-                order.Status = OrderStatus.New;
-           
-                orders.Add(order);
-                
-
-
-                Console.WriteLine($"Order placed: {order.OrderId} - {order.Type} {order.Quantity} {order.comment} of {order.Symbol} at {order.GetPrice()}");
-                //OrderManager ordrmanagr = new OrderManager();
-                
-                OrderManager.OnProcessCompleted(new string[] {order.Type.ToString(), order.Quantity.ToString(), order.Symbol, order.GetPrice().ToString()});
-
-            }
-            else
-            {
-
-                IsLogin = AuthenticationService.AuthenticateUser();
-            }
-
-        }
-        protected static void OnProcessCompleted(string[] infos)
-        {
-            EmailSender?.Invoke(null,infos);
-        }
-
-    // Cancel an existing order
-    public static void CancelOrder(int orderId)
-    {
-        if (IsLogin)
-        {
-            Order order = GetOrderById(orderId);
-
-            if (order != null && order.Status == OrderStatus.New)
-            {
-                order.Status = OrderStatus.Cancelled;
-                Console.WriteLine($"Order {orderId} cancelled.");
-            }
-            else
-            {
-                Console.WriteLine($"Unable to cancel order {orderId}. Order not found or already executed.");
-            }
-
-        }
-        else
-        {
-            IsLogin = AuthenticationService.AuthenticateUser();
-        }
-
-    }
-
-    // Get details of all orders
-    public static  void DisplayOrders()
-    {
-        Console.WriteLine("List of Orders:");
-        foreach (var order in orders)
-        {
-            Console.WriteLine($"{order.OrderId} - {order.Type} {order.Quantity} {order.Symbol} at {order.GetPrice()} ({order.Status})");
-        }
-    }
-
-    // Helper method to generate a unique order ID
-    private static int GenerateOrderId()
-    {
-        // Implement your logic for generating a unique order ID
-        // This could involve using timestamps, a counter, or other strategies
-        return orders.Count + 1;
-    }
-
-    // Helper method to retrieve an order by its ID
-    private static Order GetOrderById(int orderId)
-    {
-        return orders.Find(order => order.OrderId == orderId);
-    }
-}
 
 class Program
 {
@@ -163,7 +32,6 @@ class Program
     {
         try
         {
-            //OrderManager bl = new OrderManager();
             OrderManager.EmailSender += EmailSender.bl_ProcessCompleted; // register with an event
 
             Stocks Astock = new Stocks("AAPL");
@@ -172,7 +40,6 @@ class Program
             EuropeanOptions optionss = new EuropeanOptions(Asstock, "XCD565848", 350, 1, EuropeanOptions.BullOrBear.Put);
           
             Dictionary<string, double> sensitivity = options.Sensitivity();
-            //Console.WriteLine(sensitivity["delta"]);
 
             Order buyOrder = new Order(options)
             {
@@ -197,7 +64,6 @@ class Program
 
             Order buystockOrder = new Order(Astock)
             {
-                //Symbol = "ABC",
                 Quantity = 100,
 
                 Type = OrderType.Buy

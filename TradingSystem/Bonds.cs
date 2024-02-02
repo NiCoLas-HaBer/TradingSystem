@@ -111,7 +111,6 @@ namespace TradingSystem
                 double presentValueOfFaceValue = FaceValue / Math.Pow(1 + YieldToMaturity, YearsToMaturity);
                 modifiedDuration += YearsToMaturity * presentValueOfFaceValue;
 
-                // Calculate the total present value
                 double totalPresentValue = Pricer();
 
                 // Calculate the modified duration

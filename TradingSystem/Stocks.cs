@@ -20,7 +20,7 @@ namespace TradingSystem
         public Stocks(string tickerSymbol)
         {
             tickerSymbol = tickerSymbol.ToUpper();
-            if (StockDic.TryGetValue(tickerSymbol, out var stockInfo))// StockDic.ContainsKey(tickerSymbol))
+            if (StockDic.TryGetValue(tickerSymbol, out var stockInfo))
             {
                 TickerSymbol = tickerSymbol;
                 Name = StockDic[tickerSymbol][0];
