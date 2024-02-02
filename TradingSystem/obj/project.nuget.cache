@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "njhMfHqmrX9guX/wUZe7dff/dm8K7v7Fr7/cNF3SBX+nR8n6o3b3eqzhnkMHXN28AnpJvZDRQUZYwxA6/kglwQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\NH\\OneDrive - University of Saint Joseph\\Desktop\\CS\\TradingSystem\\TradingSystem\\TradingSystem.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\NH\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

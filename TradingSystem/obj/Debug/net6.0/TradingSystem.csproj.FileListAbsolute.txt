@@ -1,0 +1,17 @@
+C:\Users\NH\OneDrive - University of Saint Joseph\Desktop\CS\TradingSystem\TradingSystem\bin\Debug\net6.0\TradingSystem.exe
+C:\Users\NH\OneDrive - University of Saint Joseph\Desktop\CS\TradingSystem\TradingSystem\bin\Debug\net6.0\TradingSystem.deps.json
+C:\Users\NH\OneDrive - University of Saint Joseph\Desktop\CS\TradingSystem\TradingSystem\bin\Debug\net6.0\TradingSystem.runtimeconfig.json
+C:\Users\NH\OneDrive - University of Saint Joseph\Desktop\CS\TradingSystem\TradingSystem\bin\Debug\net6.0\TradingSystem.dll
+C:\Users\NH\OneDrive - University of Saint Joseph\Desktop\CS\TradingSystem\TradingSystem\bin\Debug\net6.0\TradingSystem.pdb
+C:\Users\NH\OneDrive - University of Saint Joseph\Desktop\CS\TradingSystem\TradingSystem\obj\Debug\net6.0\TradingSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\NH\OneDrive - University of Saint Joseph\Desktop\CS\TradingSystem\TradingSystem\obj\Debug\net6.0\TradingSystem.AssemblyInfoInputs.cache
+C:\Users\NH\OneDrive - University of Saint Joseph\Desktop\CS\TradingSystem\TradingSystem\obj\Debug\net6.0\TradingSystem.AssemblyInfo.cs
+C:\Users\NH\OneDrive - University of Saint Joseph\Desktop\CS\TradingSystem\TradingSystem\obj\Debug\net6.0\TradingSystem.csproj.CoreCompileInputs.cache
+C:\Users\NH\OneDrive - University of Saint Joseph\Desktop\CS\TradingSystem\TradingSystem\obj\Debug\net6.0\TradingSystem.dll
+C:\Users\NH\OneDrive - University of Saint Joseph\Desktop\CS\TradingSystem\TradingSystem\obj\Debug\net6.0\refint\TradingSystem.dll
+C:\Users\NH\OneDrive - University of Saint Joseph\Desktop\CS\TradingSystem\TradingSystem\obj\Debug\net6.0\TradingSystem.pdb
+C:\Users\NH\OneDrive - University of Saint Joseph\Desktop\CS\TradingSystem\TradingSystem\obj\Debug\net6.0\TradingSystem.genruntimeconfig.cache
+C:\Users\NH\OneDrive - University of Saint Joseph\Desktop\CS\TradingSystem\TradingSystem\obj\Debug\net6.0\ref\TradingSystem.dll
+C:\Users\NH\OneDrive - University of Saint Joseph\Desktop\CS\TradingSystem\TradingSystem\obj\Debug\net6.0\TradingSystem.csproj.AssemblyReference.cache
+C:\Users\NH\OneDrive - University of Saint Joseph\Desktop\CS\TradingSystem\TradingSystem\bin\Debug\net6.0\MathNet.Numerics.dll
+C:\Users\NH\OneDrive - University of Saint Joseph\Desktop\CS\TradingSystem\TradingSystem\obj\Debug\net6.0\TradingSystem.csproj.CopyComplete
